@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Analyzer - Resume IQ</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        <span>R</span>
+        Resume IQ
+    </div>
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="analyzer.html" class="active">
+            Analyzer
+        </a>
+
+        <a href="features.html">
+            Features
+        </a>
+
+        <a href="how-it-works.html">
+            How It Works
+        </a>
+
+    </nav>
+
+    <a href="analyzer.html" class="nav-btn">
+        Analyze Resume →
+    </a>
+
+</header>
+
+
+<!-- ================= ANALYZER ================= -->
+
+<main class="analyzer-page">
+
+    <div class="page-heading">
+
+        <div class="badge">
+            RESUME ANALYZER
+        </div>
+
+        <h1>
+            Start Your Analysis
+        </h1>
+
+        <p>
+            Upload your resume and get AI-powered insights.
+        </p>
+
+    </div>
+
+
+    <!-- UPLOAD CARD -->
+
+    <div class="analyzer-card">
+
+        <div class="privacy">
+            🔒 Your resume stays private
+        </div>
+
+
+        <label for="resumeFile" class="upload-box">
+
+            <div class="upload-icon">
+                ↑
+            </div>
+
+            <h2>
+                Drop your resume here
+            </h2>
+
+            <p>
+                or click to browse
+            </p>
+
+            <small>
+                PDF, DOC, DOCX • Maximum 5 MB
+            </small>
+
+            <input
+                type="file"
+                id="resumeFile"
+                accept=".pdf,.doc,.docx"
+            >
+
+        </label>
+
+
+        <!-- JOB ROLE -->
+
+        <div class="form-group">
+
+            <label for="jobRole">
+                Target Job Role
+                <span>Optional</span>
+            </label>
+
+            <select id="jobRole">
+
+                <option value="">
+                    Select Job Role
+                </option>
+
+                <option>
+                    Software Developer
+                </option>
+
+                <option>
+                    Web Developer
+                </option>
+
+                <option>
+                    Data Analyst
+                </option>
+
+                <option>
+                    Python Developer
+                </option>
+
+                <option>
+                    Java Developer
+                </option>
+
+                <option>
+                    Full Stack Developer
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- BUTTON -->
+
+        <button
+            class="primary-btn analyze-btn"
+            onclick="analyzeResume()"
+        >
+            Analyze My Resume ✦
+        </button>
+
+
+        <p class="demo-text">
+            Frontend demo uses sample AI analysis.
+        </p>
+
+    </div>
+
+
+    <!-- ================= RESULT ================= -->
+
+    <div id="analysisResult" class="analysis-result">
+
+        <div class="result-header">
+
+            <div>
+
+                <div class="badge">
+                    ANALYSIS REPORT
+                </div>
+
+                <h2>
+                    Your Resume Health Check
+                </h2>
+
+            </div>
+
+            <button
+                class="secondary-btn"
+                onclick="resetAnalysis()"
+            >
+                ↻ New Analysis
+            </button>
+
+        </div>
+
+
+        <div class="score-card">
+
+            <div class="score">
+
+                <strong id="scoreNumber">
+                    0
+                </strong>
+
+                <span>
+                    /100
+                </span>
+
+            </div>
+
+            <div>
+
+                <h3>
+                    Overall Resume Score
+                </h3>
+
+                <p>
+                    Your resume has a strong foundation.
+                    A few targeted changes can make it
+                    even better.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SCORE GRID -->
+
+        <div class="result-grid">
+
+            <div class="result-box">
+
+                <span>✓</span>
+
+                <strong>82%</strong>
+
+                <p>
+                    ATS Compatibility
+                </p>
+
+            </div>
+
+
+            <div class="result-box">
+
+                <span>⌁</span>
+
+                <strong>76%</strong>
+
+                <p>
+                    Content Quality
+                </p>
+
+            </div>
+
+
+            <div class="result-box">
+
+                <span>★</span>
+
+                <strong>80%</strong>
+
+                <p>
+                    Impact & Clarity
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- INSIGHTS -->
+
+        <div class="insights">
+
+            <div class="insight-card">
+
+                <span>KEYWORDS</span>
+
+                <h3>
+                    Skills Detected
+                </h3>
+
+                <strong>
+                    12 Found
+                </strong>
+
+            </div>
+
+
+            <div class="insight-card">
+
+                <span>OPPORTUNITY</span>
+
+                <h3>
+                    Missing Keywords
+                </h3>
+
+                <strong>
+                    4 Suggested
+                </strong>
+
+            </div>
+
+
+            <div class="insight-card">
+
+                <span>AI INSIGHTS</span>
+
+                <h3>
+                    Recommended Improvements
+                </h3>
+
+                <strong>
+                    6 Suggestions
+                </strong>
+
+            </div>
+
+
+            <div class="insight-card">
+
+                <span>ROLE MATCH</span>
+
+                <h3>
+                    Job Role Compatibility
+                </h3>
+
+                <strong>
+                    78% Match
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="logo">
+        <span>R</span>
+        Resume IQ
+    </div>
+
+    <p>
+        AI Resume Analyzer • TechYuva Project
+    </p>
+
+    <p>
+        © 2026 ResumeIQ
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
